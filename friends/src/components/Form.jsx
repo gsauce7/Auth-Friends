@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AxiosWithAuth } from '../utilities/axiosWithAuth';
+import { axiosWithAuth } from '../utilities/axiosWithAuth';
 
 const initialFormValue = {
     name: '',
@@ -33,19 +33,19 @@ const Form = ({ setFriends }) => {
         <h2>These are the Peoples...</h2>
         <form onSubmit={handleSubmit}>
             <input
-            type='text
-            name='name'
-            value={formValue.name}
-            onChange={handleChanges}>
-            </input>
+              type='text'
+              name='name'
+              value={formValue.name}
+              onChange={handleChanges}
+            ></input>
             <input
-            type='text
+            type='text'
             name='age'
             value={formValue.age}
             onChange={handleChanges}>
             </input>
             <input
-            type='text
+            type='text'
             name='email'
             value={formValue.email}
             onChange={handleChanges}>
