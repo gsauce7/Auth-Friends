@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../utilities/axiosWithAuth';
 
@@ -28,7 +28,7 @@ const Login = () => {
           .post('/api/login', state.credentials)
           .then((res) => {
               console.log(res);
-              windows.localStorage.setItem('token', res.data.payload);
+              window.localStorage.setItem('token', res.data.payload);
               history.push('/friends');
           })
           .catch((err) => {

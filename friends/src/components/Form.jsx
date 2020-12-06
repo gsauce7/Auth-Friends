@@ -17,7 +17,7 @@ const Form = ({ setFriends }) => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      AxiosWithAuth()
+      axiosWithAuth()
         .post('/api/friends', formValue)
         .then((res) => {
           console.log('works:', res.data);
@@ -30,26 +30,29 @@ const Form = ({ setFriends }) => {
   return (
 
     <div>
-        <h2>These are the Peoples...</h2>
+        <h2>These are my friends...</h2>
         <form onSubmit={handleSubmit}>
             <input
+              placeholder='Name'
               type='text'
               name='name'
               value={formValue.name}
               onChange={handleChanges}
-            ></input>
+            />
             <input
-            type='text'
-            name='age'
-            value={formValue.age}
-            onChange={handleChanges}>
-            </input>
+              placeholder='Age'
+              type='text'
+              name='age'
+              value={formValue.age}
+              onChange={handleChanges}
+            />
             <input
-            type='text'
-            name='email'
-            value={formValue.email}
-            onChange={handleChanges}>
-            </input>
+              placeholder='email@domain.com'
+              type='text'
+              name='email'
+              value={formValue.email}
+              onChange={handleChanges} 
+            />
 
             <button type='submit'>CLICK TO SUBMIT</button>
 
